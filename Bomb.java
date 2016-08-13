@@ -1,7 +1,7 @@
 package com.javarush.test.level25.lesson16.big01;
 
 /**
- * Класс для бомбы.
+ * Class for Bomb
  */
 public class Bomb extends BaseObject
 {
@@ -11,7 +11,7 @@ public class Bomb extends BaseObject
     }
 
     /**
-     * Отрисовываем себя на холсте.
+     * Describes himself on the canvas.
      */
     @Override
     public void draw(Canvas canvas)
@@ -20,7 +20,7 @@ public class Bomb extends BaseObject
     }
 
     /**
-     * Двигаем себя вниз на один ход.
+     * Move yourself down to one move.
      */
     @Override
     public void move()
