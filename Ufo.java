@@ -1,11 +1,11 @@
 package com.javarush.test.level25.lesson16.big01;
 
 /**
- * Класс для НЛО
+ * Class for UFO
  */
 public class Ufo extends BaseObject
 {
-    //картинка для отрисовки
+    //to draw a picture
     private static int[][] matrix = {
             {0, 0, 0, 0, 0},
             {0, 0, 1, 0, 0},
@@ -20,7 +20,7 @@ public class Ufo extends BaseObject
     }
 
     /**
-     * Метод рисует свой объект на "канвасе".
+     * The method draws your object on the "canvas".
      */
     @Override
     public void draw(Canvas canvas)
@@ -29,7 +29,7 @@ public class Ufo extends BaseObject
     }
 
     /**
-     * Двигаем себя на один ход в случайном направлении.
+     * Move yourself in one move in a random direction.
      */
     @Override
     public void move()
@@ -48,8 +48,8 @@ public class Ufo extends BaseObject
     }
 
     /**
-     * Стреляем.
-     * Сбрасываем(создаем) одну бомбу прямо под собой.
+     * Shoot.
+      * Clear the (create) a bomb right under him.
      */
     public void fire()
     {
