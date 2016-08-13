@@ -5,21 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Главный класс игры - Космос (Space)
+ * The main game class - Space
  */
 public class Space
 {
-    //Ширина и высота игрового поля
+    //The width and height of the playing field
     private int width;
     private int height;
 
-    //Космический корабль
+    //Spaceship
     private SpaceShip ship;
-    //Список НЛО
+    //UFO List
     private ArrayList<Ufo> ufos = new ArrayList<Ufo>();
-    //Список бомб
+    //Bomb list
     private ArrayList<Bomb> bombs = new ArrayList<Bomb>();
-    //Список ракет
+    //Rocket list
     private ArrayList<Rocket> rockets = new ArrayList<Rocket>();
 
     public Space(int width, int height)
@@ -29,64 +29,64 @@ public class Space
     }
 
     /**
-     *  Основной цикл программы.
-     *  Тут происходят все важные действия
+     *  The main program loop.
+      * It's all important actions occur
      */
     public void run()
     {
-        //Создаем холст для отрисовки.
+        //Create a canvas for drawing.
         Canvas canvas = new Canvas(width, height);
 
-        //Создаем объект "наблюдатель за клавиатурой" и стартуем его.
+        //Create an object "observer of the keyboard" and we start it.
         KeyboardObserver keyboardObserver = new KeyboardObserver();
         keyboardObserver.start();
 
-        //Игра работает, пока корабль жив
+        //The game runs until the ship alive.
         while (ship.isAlive())
         {
-            //"наблюдатель" содержит события о нажатии клавиш?
+            //"Observer" contains events keystrokes?
             if (keyboardObserver.hasKeyEvents())
             {
                 KeyEvent event = keyboardObserver.getEventFromTop();
-                //Если "стрелка влево" - сдвинуть фигурку влево
+                //If the "left arrow" - move the figure to the left
                 System.out.print(event.getKeyCode());
                 if (event.getKeyCode() == KeyEvent.VK_LEFT)
                     ship.moveLeft();
-                //Если "стрелка вправо" - сдвинуть фигурку вправо
+                //If the "right arrow" - move the figure to the right
                 else if (event.getKeyCode() == KeyEvent.VK_RIGHT)
                     ship.moveRight();
-                //Если "пробел" - запускаем шарик
+                //If the "gap" - run the ball
                 else if (event.getKeyCode() == KeyEvent.VK_SPACE)
                     ship.fire();
             }
 
-            //двигаем все объекты игры
+            //move objects games
             moveAllItems();
 
-            //проверяем столкновения
+            //collision check
             checkBombs();
             checkRockets();
-            //удаляем умершие объекты из списков
+            //remove dead objects from the lists
             removeDead();
 
-            //Создаем НЛО (1 раз в 10 ходов)
+            //Create UFOs (1 every 10 turns)
             createUfo();
 
-            //Отрисовываем все объекты на холст, а холст выводим на экран
+            //We describe all the objects on the canvas canvas display
             canvas.clear();
             draw(canvas);
             canvas.print();
 
-            //Пауза 300 миллисекунд
+            //pause 300 ms
             Space.sleep(300);
         }
 
-        //Выводим сообщение "Game Over"
+        //writing message "Game Over"
         System.out.println("Game Over!");
     }
 
     /**
-     * Двигаем все объекты игры
+     * Move objects games
      */
     public void moveAllItems()
     {
@@ -97,7 +97,7 @@ public class Space
     }
 
     /**
-     * Метод возвращает общий список, который содержит все объекты игры
+     * The method returns a generic list that contains all the objects of the game
      */
     public List<BaseObject> getAllItems()
     {
@@ -109,7 +109,7 @@ public class Space
     }
 
     /**
-     * Создаем новый НЛО. 1 раз на 10 вызовов.
+     * Create a new UFO. 1 time for 10 calls.
      */
     public void createUfo()
     {
@@ -125,9 +125,9 @@ public class Space
     }
 
     /**
-     * Проверяем бомбы.
-     * а) столкновение с кораблем (бомба и корабль умирают)
-     * б) падение ниже края игрового поля (бомба умирает)
+     * Check bombs.
+      * A) collision with the ship (the ship and bomb  die)
+      * B) fall below the edge of the playing field (the bomb dies)
      */
     public void checkBombs()
     {
@@ -145,9 +145,9 @@ public class Space
     }
 
     /**
-     * Проверяем рокеты.
-     * а) столкновение с НЛО (ракета и НЛО умирают)
-     * б) вылет выше края игрового поля (ракета умирает)
+     * Check the rocket.
+      * A) collision with a UFO (UFO Rocket and die)
+      * B) fly above the edge of the playing field (the rocket dies)
      */
     public void checkRockets()
     {
@@ -168,7 +168,7 @@ public class Space
     }
 
     /**
-     * Удаляем умерсшие объекты (бомбы, ракеты, НЛО) из списков
+     * Remove the dead objects (bombs, rocket, UFO) from the list
      */
     public void removeDead()
     {
@@ -192,9 +192,9 @@ public class Space
     }
 
     /**
-     * Отрисовка всех объектов игры:
-     * а) заполняем весь холст точесками.
-     * б) отрисовываем все объекты на холст.
+     * Drawing of all objects of the game: 
+     * * a) to fill the entire canvas points. 
+     * * B) draw the objects on the canvas.
      */
     public void draw(Canvas canvas)
     {
@@ -271,7 +271,7 @@ public class Space
     }
 
     /**
-     * Метод делает паузу длинной delay миллисекунд.
+     * Method pauses long delay milliseconds.)
      */
     public static void sleep(int delay)
     {
