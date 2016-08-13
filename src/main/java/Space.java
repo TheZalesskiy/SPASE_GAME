@@ -1,5 +1,3 @@
-package com.javarush.test.level25.lesson16.big01;
-
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;

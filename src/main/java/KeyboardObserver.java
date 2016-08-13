@@ -1,5 +1,3 @@
-package com.javarush.test.level25.lesson16.big01;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
