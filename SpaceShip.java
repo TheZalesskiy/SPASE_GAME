@@ -1,11 +1,11 @@
 package com.javarush.test.level25.lesson16.big01;
 
 /**
- * Класс для космического корабля
+ * Class for SpaceShip
  */
 public class SpaceShip extends BaseObject
 {
-    //картинка корабля для отрисовки
+    //ship to draw a picture
     private static int[][] matrix = {
             {0, 0, 0, 0, 0},
             {0, 0, 1, 0, 0},
@@ -14,7 +14,7 @@ public class SpaceShip extends BaseObject
             {1, 1, 1, 1, 1},
     };
 
-    //вектор движения (-1 влево,+1 вправо)
+    //motion vector (left -1, + 1 right)
     private double dx = 0;
 
     public SpaceShip(int x, int y)
@@ -23,7 +23,7 @@ public class SpaceShip extends BaseObject
     }
 
     /**
-     * Устанавливаем вектор движения влево
+     * Set the motion vector to the left
      */
     public void moveLeft()
     {
@@ -31,7 +31,7 @@ public class SpaceShip extends BaseObject
     }
 
     /**
-     * Устанавливаем вектор движения вправо
+     * Set the motion vector to the right
      */
     public void moveRight()
     {
@@ -39,7 +39,7 @@ public class SpaceShip extends BaseObject
     }
 
     /**
-     * Метод рисует свой объект на "канвасе".
+     * The method draws your object on the "canvas".
      */
     @Override
     public void draw(Canvas canvas)
@@ -48,8 +48,8 @@ public class SpaceShip extends BaseObject
     }
 
     /**
-     * Двигаем себя на один ход.
-     * Проверяем столкновение с границами.
+     * Move yourself in one turn.
+      * Check the collision with the boundaries.
      */
     @Override
     public void move()
@@ -60,8 +60,8 @@ public class SpaceShip extends BaseObject
     }
 
     /**
-     * Стреляем.
-     * Создаем две ракеты: слева и справа от корабля.
+     * Shoot.
+      * Create two missiles: the left and right side of the ship.
      */
     public void fire()
     {
