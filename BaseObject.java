@@ -1,16 +1,16 @@
 package com.javarush.test.level25.lesson16.big01;
 
 /**
- * Базовый класс для всех объектов игры.
+ * The base class for all objects in the game.
  */
 public abstract class BaseObject
 {
-    //координаты
+    //coordinates
     protected double x;
     protected double y;
-    //радиус объекта
+    //object range
     protected double radius;
-    //состояние объект - жив ли объект
+    //the state of the object - whether the object is alive
     private boolean isAlive;
 
     public BaseObject(double x, double y, double radius)
@@ -52,7 +52,7 @@ public abstract class BaseObject
     }
 
     /**
-     * Метод рисует свой объект на "канвасе".
+     * The method draws your object on the "canvas".
      */
     public void draw(Canvas canvas)
     {
@@ -60,7 +60,7 @@ public abstract class BaseObject
     }
 
     /**
-     * Двигаем себя на один ход.
+     * Move yourself in one turn.
      */
     public void move()
     {
@@ -68,7 +68,7 @@ public abstract class BaseObject
     }
 
     /**
-     * Проверяем - не выходит ли (x,y) за границы.
+     * Check - Do not go (x, y) abroad.
      */
     public void checkBorders(double minx, double maxx, double miny, double maxy)
     {
@@ -94,7 +94,7 @@ public abstract class BaseObject
     }
 
     /**
-     * Проверяем - пересекаются ли переданный(o) и наш(this) объекты.
+     * Check - whether the transmitted cross (o) and our (this) objects.
      */
     public boolean isIntersec(BaseObject o)
     {
