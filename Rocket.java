@@ -1,7 +1,7 @@
 package com.javarush.test.level25.lesson16.big01;
 
 /**
- * Класс для объектов-ракета
+ * Class for Rocket
  */
 public class Rocket  extends BaseObject
 {
@@ -12,7 +12,7 @@ public class Rocket  extends BaseObject
     }
 
     /**
-     * Метод рисует свой объект на "канвасе".
+     * The method draws your object on the "canvas".
      */
     @Override
     public void draw(Canvas canvas)
@@ -21,7 +21,7 @@ public class Rocket  extends BaseObject
     }
 
     /**
-     * Двигаем себя вверх на один ход.
+     * Move yourself up to one turn.
      */
     @Override
     public void move()
